@@ -1,15 +1,19 @@
 
 # DeadPacker
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![GitHub Release](https://img.shields.io/github/v/release/Artemon121/DeadPacker)
+
 A tool to automatically compile and pack files for Deadlock modding.
 
 ![Screenshot](https://github.com/Artemon121/DeadPacker/blob/main/Assets/Screenshot_1.png?raw=true)
 
-## 🛠️ Features
+## 📥 Installation & Usage
 
-- **Compile**: Compiles the files using the resource compiler.
-- **Pack**: Packs the compiled files into a VPK file.
-- **Launch**: Launches Deadlock with the specified parameters.
+1. Download the [latest release](https://github.com/Artemon121/DeadPacker/releases/latest).
+2. Extract the `.zip` archive.
+3. Write your configuration file and save it with a `.toml` extension.
+4. Drag and drop the configuration file into the `DeadPacker.exe` executable.
 
 ## ⚙️ Configuration
 
