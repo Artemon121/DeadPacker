@@ -1,4 +1,3 @@
-
 # DeadPacker
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -29,9 +28,6 @@ This tool uses a [TOML](https://toml.io) configuration file to define the steps 
 # The steps are executed in the order they are defined in the file.
 
 [[step]]
-[step.close_deadlock]
-
-[[step]]
 [step.compile]
 resource_compiler_path = 'L:\rCSDK10\game\bin\win64\resourcecompiler.exe' # Use single quotes for Windows paths
 addon_content_directory = 'L:\rCSDK10\content\citadel_addons\better_hero_testing'
@@ -48,6 +44,9 @@ from = 'L:\SteamLibrary\steamapps\common\Deadlock\game\citadel\addons\better_tes
 to = 'L:\SteamLibrary\steamapps\common\Deadlock\game\citadel\addons\pak05_dir.vpk'
 
 [[step]]
+[step.close_deadlock]
+
+[[step]]
 [step.launch_deadlock]
-launch_params = "-dev -convars_visible_by_default -noassert -multiple -multirun -allowmultiple +exec autoexec +map new_player_basics" # Optional
+launch_params = "-dev -convars_visible_by_default -noassert -multiple -multirun -allowmultiple -no_prewarm_map +exec autoexec +map new_player_basics" # Optional
 ```
