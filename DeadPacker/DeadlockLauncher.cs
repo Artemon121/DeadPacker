@@ -21,6 +21,26 @@ namespace DeadPacker
             process.Kill();
             await process.WaitForExitAsync();
             Log.Info("Closed Deadlock");
+
+            Log.Debug("Waiting for Steam to recognize that the game is no longer running...");
+
+            string registryPath = $@"Software\Valve\Steam\Apps\{DEADLOCK_APPID}";
+            string valueName = "Running";
+            while (true)
+            {
+                using (var key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(registryPath))
+                {
+                    if (key != null)
+                    {
+                        object? value = key.GetValue(valueName);
+                        if (value is int intValue && intValue == 0)
+                        {
+                            break;
+                        }
+                    }
+                }
+                await Task.Delay(100);
+            }
         }
         public static void LaunchDeadlock(LaunchDeadlockConfig config)
         {
