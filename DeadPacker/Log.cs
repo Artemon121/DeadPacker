@@ -8,7 +8,6 @@ namespace DeadPacker
         public static string FormatPath(string path)
         {
             var parts = path.Replace("\\", "/").TrimEnd('/').Split('/').ToList();
-            parts[^1] = $"[link={path}]{parts[^1]}[/]";
             if (Directory.Exists(path)) parts.Add("");
             var new_path = string.Join("[springgreen4]/[/]", parts);
             return $"[springgreen2]{new_path}[/]";
